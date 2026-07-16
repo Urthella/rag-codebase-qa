@@ -1,0 +1,104 @@
+{
+  "description": "Retrieval eval set for the project-02-rate-limiter corpus. Each question lists the source file(s) that a correct retrieval must surface; a retrieved chunk counts as a hit when its path matches any expected file.",
+  "corpus": "project-02-rate-limiter",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Where is the token bucket refill implemented for the in-memory limiter?",
+      "expected_files": ["src/limiters/memory/tokenBucket.ts"]
+    },
+    {
+      "id": 2,
+      "question": "Where are the atomic Redis Lua scripts for the rate limiters defined?",
+      "expected_files": ["src/limiters/redis/scripts.ts"]
+    },
+    {
+      "id": 3,
+      "question": "How is the client identity resolved from the x-api-key header or the client IP?",
+      "expected_files": ["src/identity.ts"]
+    },
+    {
+      "id": 4,
+      "question": "Where are the Prometheus counters and the request duration histogram created?",
+      "expected_files": ["src/metrics.ts"]
+    },
+    {
+      "id": 5,
+      "question": "Which file defines the RateLimitDecision interface that every limiter returns?",
+      "expected_files": ["src/types.ts"]
+    },
+    {
+      "id": 6,
+      "question": "Where does createLimiter pick the limiter implementation based on algorithm and store kind?",
+      "expected_files": ["src/limiters/factory.ts"]
+    },
+    {
+      "id": 7,
+      "question": "How does the in-memory fixed window counter algorithm work?",
+      "expected_files": ["src/limiters/memory/fixedWindow.ts"]
+    },
+    {
+      "id": 8,
+      "question": "Where does the sliding window log prune expired timestamps out of the trailing window?",
+      "expected_files": ["src/limiters/memory/slidingWindowLog.ts"]
+    },
+    {
+      "id": 9,
+      "question": "Where are hop-by-hop headers stripped before forwarding a request to the upstream?",
+      "expected_files": ["src/proxy.ts"]
+    },
+    {
+      "id": 10,
+      "question": "How is the gateway JSON config validated, for example that limit and windowSeconds are positive?",
+      "expected_files": ["src/config.ts"]
+    },
+    {
+      "id": 11,
+      "question": "Where are per-API-key overrides merged into the route's default rate limit params?",
+      "expected_files": ["src/gateway.ts"]
+    },
+    {
+      "id": 12,
+      "question": "Where is the X-Forwarded-For header appended when proxying to the upstream?",
+      "expected_files": ["src/proxy.ts"]
+    },
+    {
+      "id": 13,
+      "question": "Which module starts the HTTP gateway server and matches routes by longest path prefix?",
+      "expected_files": ["src/gateway.ts"]
+    },
+    {
+      "id": 14,
+      "question": "Where is the Redis-backed token bucket limiter that evaluates the Lua script?",
+      "expected_files": ["src/limiters/redis/tokenBucket.ts", "src/limiters/redis/scripts.ts"]
+    },
+    {
+      "id": 15,
+      "question": "How do the tests fake Redis EVAL behavior without a real Redis server?",
+      "expected_files": ["test/helpers/fakeRedis.ts"]
+    },
+    {
+      "id": 16,
+      "question": "Where is retryAfterSeconds computed when a token bucket request is denied?",
+      "expected_files": [
+        "src/limiters/memory/tokenBucket.ts",
+        "src/limiters/redis/scripts.ts",
+        "src/limiters/redis/tokenBucket.ts"
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Where do idle buckets and counters get swept so idle keys do not leak memory?",
+      "expected_files": [
+        "src/limiters/memory/tokenBucket.ts",
+        "src/limiters/memory/fixedWindow.ts",
+        "src/limiters/memory/slidingWindowLog.ts"
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Where does the gateway run Redis scripts with EVALSHA and fall back to EVAL?",
+      "expected_files": ["src/limiters/redis/runScript.ts"]
+    }
+  ]
+}

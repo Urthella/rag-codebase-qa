@@ -1,0 +1,15 @@
+# Core (pinned) -- exact versions verified against Python 3.12 on Windows.
+# Regenerate with: pip freeze | findstr /i "fastapi uvicorn numpy dotenv tree pytest httpx"
+fastapi==0.115.12
+uvicorn==0.34.0
+numpy==2.2.4
+python-dotenv==1.0.1
+
+# AST-aware chunking (optional at runtime -- code falls back to ast/regex chunkers
+# if these fail to import; remove the two lines below if wheels fail to install).
+tree-sitter==0.24.0
+tree-sitter-language-pack==0.7.2
+
+# Test dependencies
+pytest==8.3.5
+httpx==0.28.1

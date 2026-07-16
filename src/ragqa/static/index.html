@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG Codebase Q&amp;A</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">&#9741;</span>
+      <div>
+        <h1>RAG Codebase Q&amp;A</h1>
+        <p id="status-line">connecting&hellip;</p>
+      </div>
+    </div>
+    <div class="controls">
+      <label>Repo
+        <select id="repo-select"></select>
+      </label>
+      <label>Retrieval
+        <select id="mode-select">
+          <option value="hybrid" selected>hybrid (vector + BM25)</option>
+          <option value="vector">vector only</option>
+          <option value="bm25">BM25 only</option>
+        </select>
+      </label>
+      <label>Answerer
+        <select id="provider-select">
+          <option value="">default (env)</option>
+          <option value="extractive">extractive (offline)</option>
+          <option value="anthropic">anthropic (Claude)</option>
+          <option value="openai">openai</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <section id="index-panel">
+    <input id="index-source" type="text"
+      placeholder="Local repo path or git URL, e.g. C:\repos\my-project or https://github.com/org/repo.git" />
+    <button id="index-btn">Index repo</button>
+    <span id="index-status"></span>
+  </section>
+
+  <main id="chat"></main>
+
+  <footer>
+    <form id="ask-form">
+      <input id="question" type="text" autocomplete="off"
+        placeholder="Ask about the codebase, e.g. Where is the token bucket refill implemented?" />
+      <button type="submit" id="ask-btn">Ask</button>
+    </form>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
