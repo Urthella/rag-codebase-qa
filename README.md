@@ -1,6 +1,7 @@
 # RAG-Powered Codebase Q&A Assistant
 
 <!-- badges -->
+[![CI](https://github.com/Urthella/rag-codebase-qa/actions/workflows/ci.yml/badge.svg)](https://github.com/Urthella/rag-codebase-qa/actions/workflows/ci.yml)
 [![Stars](https://img.shields.io/github/stars/Urthella/rag-codebase-qa?style=flat-square&logo=github)](https://github.com/Urthella/rag-codebase-qa)
 [![Last commit](https://img.shields.io/github/last-commit/Urthella/rag-codebase-qa?style=flat-square)](https://github.com/Urthella/rag-codebase-qa/commits/main)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
