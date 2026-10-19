@@ -1,5 +1,17 @@
 # RAG-Powered Codebase Q&A Assistant
 
+<!-- badges -->
+[![Stars](https://img.shields.io/github/stars/Urthella/rag-codebase-qa?style=flat-square&logo=github)](https://github.com/Urthella/rag-codebase-qa)
+[![Last commit](https://img.shields.io/github/last-commit/Urthella/rag-codebase-qa?style=flat-square)](https://github.com/Urthella/rag-codebase-qa/commits/main)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![tree-sitter](https://img.shields.io/badge/tree--sitter-555555?style=flat-square)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![pgvector](https://img.shields.io/badge/pgvector-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Anthropic](https://img.shields.io/badge/Anthropic-191919?style=flat-square&logo=anthropic&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+
 Ask natural-language questions about any code repository and get **grounded
 answers with `file:line` citations**. A real retrieval-augmented-generation
 pipeline, end to end: AST-aware chunking, pluggable embeddings, a SQLite (or
@@ -230,3 +242,16 @@ tests/           chunker boundaries, BM25/RRF, store round-trip, extractive
 - The regex JS/TS fallback chunker balances braces outside strings/comments
   but does not fully parse — exotic syntax may land in module chunks instead
   of symbol chunks (tree-sitter path handles these).
+
+---
+
+## Related projects
+
+Part of my backend and distributed-systems series:
+
+- [**realtime-collab-editor**](https://github.com/Urthella/realtime-collab-editor): CRDT sync over WebSockets, live presence, debounced persistence
+- [**distributed-rate-limiter**](https://github.com/Urthella/distributed-rate-limiter): token bucket, sliding window and fixed window limits with atomic Redis Lua
+- [**event-driven-order-system**](https://github.com/Urthella/event-driven-order-system): saga orchestration, compensating transactions, idempotent consumers, tracing
+- [**job-queue-orchestrator**](https://github.com/Urthella/job-queue-orchestrator): race-safe job claiming, retries with backoff, dead-letter queue, DAG workflows
+
+More of my work: [github.com/Urthella](https://github.com/Urthella) · [utkudemirtas.tech](https://www.utkudemirtas.tech)
